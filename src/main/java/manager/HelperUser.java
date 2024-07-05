@@ -50,4 +50,6 @@ public class HelperUser extends HelperBase {
     public void logOut() {
         click(By.xpath("//button[text()='Sign Out']"));
     }
+
+
 }
