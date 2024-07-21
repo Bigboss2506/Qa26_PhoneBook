@@ -74,4 +74,10 @@ public class HelperUser extends HelperBase {
 
 
     }
+
+    public void login(User user) {
+        openLoginRegistrationForm();
+        fillLoginRegistrationForm(user);
+        submitLogin();
+    }
 }
