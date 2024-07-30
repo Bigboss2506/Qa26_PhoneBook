@@ -1,5 +1,6 @@
 package tests;
 
+import manager.DataProviderContact;
 import models.Contact;
 import models.User;
 import org.testng.Assert;
@@ -18,19 +19,19 @@ public class AddNewContactTests extends TestBase{
 
     }
 
-    @Test
-    public void addContactSuccessAllFields(){
+    @Test(dataProvider = "contactSuccess", dataProviderClass = DataProviderContact.class)
+    public void addContactSuccessAllFields(Contact contact){
         int i = (int) (System.currentTimeMillis()/1000%3600);
 
 
-        Contact contact = Contact.builder()
-                .name("Tony" + i)
-                .lastName("Stark")
-                .phone("3434343"+i)
-                .email("stark" +i+ "@gmail.com")
-                .address("NY")
-                .description("All Fields")
-                .build();
+//        Contact contact = Contact.builder()
+//                .name("Tony" + i)
+//                .lastName("Stark")
+//                .phone("3434343"+i)
+//                .email("stark" +i+ "@gmail.com")
+//                .address("NY")
+//                .description("All Fields")
+//                .build();
 
         app.getHelperContact().openContactForm();
         app.getHelperContact().fillContactForm(contact);
@@ -125,16 +126,16 @@ public class AddNewContactTests extends TestBase{
         Assert.assertTrue(app.getHelperContact().isAddPageStillDisplayed());
 
     }
-    @Test
-    public void addNewContactWrongPhone(){
-        Contact contact = Contact.builder()
-                .name("Tony")
-                .lastName("Stark")
-                .phone("")
-                .email("stark@gmail.com")
-                .address("NY")
-                .description("Wrong Phone")
-                .build();
+    @Test(dataProvider = "contactWrongPhone", dataProviderClass = DataProviderContact.class)
+    public void addNewContactWrongPhone(Contact contact){
+//        Contact contact = Contact.builder()
+//                .name("Tony")
+//                .lastName("Stark")
+//                .phone("")
+//                .email("stark@gmail.com")
+//                .address("NY")
+//                .description("Wrong Phone")
+//                .build();
 
         app.getHelperContact().openContactForm();
         app.getHelperContact().fillContactForm(contact);
