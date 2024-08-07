@@ -59,7 +59,7 @@ public class AddNewContactTests extends TestBase{
 
     }
 
-    @Test
+    @Test(groups = {"smoke", "regress"})
     public void addContactSuccessReqFields(){
 
         int i = (int) (System.currentTimeMillis()/1000%3600);

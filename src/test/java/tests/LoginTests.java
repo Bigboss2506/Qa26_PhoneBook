@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import javax.jws.soap.SOAPBinding;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -75,7 +75,7 @@ public class LoginTests extends TestBase {
 
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void loginWrongEmail(){
         logger.info("Test data ---> email: 'maragmail.com' & password: 'Mmar123456$'");
         app.getHelperUser().openLoginRegistrationForm();

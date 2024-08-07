@@ -45,7 +45,7 @@ public class RegistrationTests  extends TestBase{
 
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void registrationWrongPassword(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         User user = new User().setEmail("jek@gmail.com").setPassword("Big123");
