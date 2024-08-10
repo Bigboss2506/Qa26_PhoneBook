@@ -17,7 +17,7 @@ import java.util.Objects;
 public class LoginTests extends TestBase {
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void preCondition(){
         // if SIGN OUT present ---> logout
         if(app.getHelperUser().isLogget()){

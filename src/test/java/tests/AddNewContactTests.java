@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class AddNewContactTests extends TestBase{
 
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void preCondition(){
         if(!app.getHelperUser().isLogget()){
             app.getHelperUser().login(new User().setEmail("jeka@gmail.com").setPassword("Bigboss2506$"));

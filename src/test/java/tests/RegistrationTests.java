@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class RegistrationTests  extends TestBase{
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void preCondition(){
         if(app.getHelperUser().isLogget()){
             app.getHelperUser().logOut();
