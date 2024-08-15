@@ -55,6 +55,13 @@ task group(type: Test){
 
 
     }
+
+    if(project.hasProperty('browser')){
+        systemProperty 'browser',
+
+                "${browser}"
+
+    }
 }
 
 task team(type: Test){
